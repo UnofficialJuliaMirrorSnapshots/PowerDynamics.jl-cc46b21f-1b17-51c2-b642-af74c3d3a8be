@@ -27,6 +27,7 @@ include("nodes/VoltageSourceInverterVoltagePT1.jl")
 include("nodes/CurrentSourceInverterMinimal.jl")
 include("nodes/ExponentialRecoveryLoad.jl")
 include("nodes/experimental/RLCLoad.jl")
+include("nodes/experimental/PVInverterWithFrequencyControl.jl")
 
 
 # all line types
@@ -39,6 +40,7 @@ include("lines/PiModelLine.jl")
 include("lines/Transformer.jl")
 
 include("operationpoint/operationpoint.jl")
+include("operationpoint/find_valid_initial_condition.jl")
 
 include("simulations/PowerGridSolutions.jl")
 include("simulations/simulations.jl")
