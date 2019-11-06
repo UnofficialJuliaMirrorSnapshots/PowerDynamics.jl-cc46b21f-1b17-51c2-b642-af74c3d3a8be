@@ -45,10 +45,14 @@ function simulate(pd::PowerPerturbation, powergrid, x0, timespan)
     integrator.f = rhs(pd(powergrid))
     u_modified!(integrator,true)
 
-    step!(integrator, pd.tspan_fault[2], true)
+    step!(integrator, pd.tspan_fault[2]-pd.tspan_fault[1], true)
 
     # update integrator, clear error
     integrator.f = rhs(powergrid)
+    u_modified!(integrator,true)
+
+    step!(integrator, timespan[2]-pd.tspan_fault[2], true)
+
 
     solve!(integrator)
 
